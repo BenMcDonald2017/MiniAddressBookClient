@@ -1,0 +1,21 @@
+<div mat-dialog-content>
+  <p class="ag-theme-material">Contact</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.phone">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.id">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick(data)">Cancel</button>
+  <button *ngIf="!data.isNew" mat-button (click)="onDeleteClick(data)">Delete</button>
+  <button *ngIf="data.isNew" mat-button (click)="onDeleteClick(data)">Add Contact</button>
+  <button *ngIf="!data.isNew" mat-button (click)="onDeleteClick(data)" cdkFocusInitial>Update</button>
+</div>
